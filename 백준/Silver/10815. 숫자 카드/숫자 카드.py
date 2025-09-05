@@ -1,19 +1,7 @@
-def inputCard():
-    a = int(input())
-    a_arr = list(map(int, input().split()))
-    return a, a_arr
-
-
-n, n_arr = inputCard()
-m, m_arr = inputCard()
-n_dict = {}
-result = []
-
-for i in range(n):
-    n_dict[n_arr[i]] = 1
-
-for j in range(m):
-    tmp = 1 if n_dict.get(m_arr[j]) else 0
-    result.append(tmp)
+n = int(input())
+n_set = set(map(int, input().split()))
+m = int(input())
+m_arr = list(map(int, input().split()))
+result = [1 if a in n_set else 0 for a in m_arr]
 
 print(" ".join(map(str, result)))
