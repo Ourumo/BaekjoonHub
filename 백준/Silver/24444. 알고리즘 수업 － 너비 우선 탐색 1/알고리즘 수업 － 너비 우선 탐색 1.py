@@ -14,14 +14,14 @@ for _ in range(M):
 for nodes in linked_nodes:
     nodes.sort()
 
-q, count = deque(), 0
+q, count = deque(), 1
+visited[R - 1] = True
 q.append(R)
 
 while q:
-    count += 1
     c = q.popleft()
-    visited[c - 1] = True
     order[c - 1] = count
+    count += 1
 
     for n in linked_nodes[c - 1]:
         if not visited[n - 1]:
