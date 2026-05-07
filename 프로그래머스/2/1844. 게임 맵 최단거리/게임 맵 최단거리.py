@@ -10,7 +10,7 @@ def solution(maps):
     dq.append([0, 0, 0]) # [y, x, count]
     maps[0][0] = 0
 
-    # DFS
+    # BFS
     while dq:
         y, x, count = dq.popleft()
         count += 1
